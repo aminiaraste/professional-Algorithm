@@ -4,7 +4,6 @@ function magic(myarr){
     for(let i=0 ;i<myarr.length;i++){
         var sum = 0;
         var sum2=0;
-        console.log(myarr[i]);
         for(let j=0;j<myarr[i].length;j++){
             sum += myarr[i][j];
             sum2 +=myarr[j][i];
@@ -14,6 +13,11 @@ function magic(myarr){
             x = sum;
         }
         if(x !=sum || x!=sum2){
+            return false;
+        }
+        let di1 = myarr[0][0]+myarr[1][1]+myarr[2][2];
+        let di2 = myarr[0][2]+myarr[1][1]+myarr[2][0];
+        if(x !=di1 || x!=di2){
             return false;
         }
         
